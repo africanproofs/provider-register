@@ -16,8 +16,8 @@ contract ProviderRegister {
 
 
     enum PROVIDER_STATUS {
-        REGISTERED,  // Default on successful registration.
-        UNREGISTERED // Denotes an de-registration.
+        INACTIVE, // Denotes an de-registration.
+        ACTIVE  // Default on successful registration.
     }
 
     struct Provider{
@@ -47,7 +47,7 @@ contract ProviderRegister {
 
         for (uint i=0; i<providerLength; i++){
             if(_compareName(_name, providers[providerIndex[i]].name)){
-                if (providers[providerIndex[i]].status == PROVIDER_STATUS.REGISTERED)
+                if (providers[providerIndex[i]].status == PROVIDER_STATUS.ACTIVE)
                     return true;
             }
         }
@@ -65,14 +65,14 @@ contract ProviderRegister {
             
             providers[msg.sender].name = _name;
             providers[msg.sender].url = _url;
-            providers[msg.sender].status = PROVIDER_STATUS.REGISTERED;
+            providers[msg.sender].status = PROVIDER_STATUS.ACTIVE;
         } else{
 
             require(!_verifyProviderName(_name), ERR_NAME_IN_USE);
 
             providerIndex.push(msg.sender);
             uint _index = providerIndex.length-1;
-            providers[msg.sender] = Provider(msg.sender, _name, _url, PROVIDER_STATUS.REGISTERED, _index);
+            providers[msg.sender] = Provider(msg.sender, _name, _url, PROVIDER_STATUS.ACTIVE, _index);
         }
         
         emit ProviderRegisteredEvent(
@@ -80,7 +80,7 @@ contract ProviderRegister {
             providers[msg.sender].index,
             _name,
             _url,
-            PROVIDER_STATUS.REGISTERED
+            PROVIDER_STATUS.ACTIVE
         );
 
         return true;
@@ -94,7 +94,7 @@ contract ProviderRegister {
         require(providerIndex.length > 0, ERR_NO_PROVIDERS);
         require(_isProvider(msg.sender), ERR_SIGNER_NOT_REGISTERED);
 
-        providers[msg.sender].status = PROVIDER_STATUS.UNREGISTERED;
+        providers[msg.sender].status = PROVIDER_STATUS.INACTIVE;
 
         emit ProviderUnregisteredEvent(
             msg.sender,

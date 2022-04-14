@@ -34,10 +34,10 @@ def test_unregister_a_provider(contract):
     contract.unregister({"from": accounts[1]})
 
     unregistered = contract.getProvider(accounts[1])
-    assert unregistered[3] == 1
+    assert unregistered[3] == 0
 
     registered = contract.getProvider(accounts[2])
-    assert registered[3] == 0
+    assert registered[3] == 1
 
 
 def test_provider_name_resolution_failure(contract):
@@ -53,10 +53,10 @@ def test_unregistered_provider_name_resolution_success(contract):
     contract.register("African Proofs", "https://proofs.africa/path_to_provider_json_file.json", {"from": accounts[2]})
 
     unregistered = contract.getProvider(accounts[1])
-    assert unregistered[3] == 1
+    assert unregistered[3] == 0
 
     registered = contract.getProvider(accounts[2])
-    assert registered[3] == 0
+    assert registered[3] == 1
 
 
 def test_non_existing_provider_failure(contract):
