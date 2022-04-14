@@ -3,7 +3,7 @@ African Proofs proposes an on-chain mechanism to enable Flare and Songbird provi
 *For the purposes of this document, a provider is any entity that performs some sort of service for the Flare ecosystem. This typically includes price providers, attestation providers, validators ets.*
 
 ## Provider Register Contract
-The contract is intended to facilitate a decentralised method to, in a permissionless manner; 1.) Notify other chain providers of the existence of chain infrastructure offerings, 2.) Allow for an exchange of meta information amongst and about chain providers and validators.
+The contract is intended to facilitate a decentralised method to, in a permissionless manner; 1.) Notify the ecosystem participants of the existence of chain infrastructure offerings, 2.) Allow for an exchange of meta information amongst and about chain providers, developers, and validators etc.
 
 ### How it works.
 
