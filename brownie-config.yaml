@@ -1,0 +1,8 @@
+dotenv: .env
+networks:
+  default: development
+  mainnet-fork-dev:
+    verify: False
+
+wallets:
+  from_key: ${PRIVATE_KEY}
