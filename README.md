@@ -1,13 +1,13 @@
-African Proofs proposes an on-chain mechanism to enable Flare and Songbird participants to self-manage data about their offerings. The mechanism involves a smart contract deployed on-chain, allowing participants to publish a pointer to a self hosted and standardised file containing information on the participant. This is intended for use by price providers and state connector validators.
+African Proofs proposes an on-chain mechanism to enable Flare and Songbird providers to self-manage data about their offerings. The mechanism involves a smart contract deployed on-chain, allowing providers to publish a pointer to a self hosted and standardised file containing information on the provider. This is intended for use by price providers and state connector validators.
 
 **This information would also be useful for devs implementing on the Flare and Songbird chains, as they make decisions about which endpoints would be best performers for their Dapps.**
 
-## Flare Participant Register Contract
-The contract is intended to facilitate a decentralised method to, in a permissionless manner; 1.) Notify other chain participants of the existence of chain infrastructure offerings, 2.) Allow for an exchange of meta information amongst and about chain providers and validators.
+## Provider Register Contract
+The contract is intended to facilitate a decentralised method to, in a permissionless manner; 1.) Notify other chain providers of the existence of chain infrastructure offerings, 2.) Allow for an exchange of meta information amongst and about chain providers and validators.
 
 ### How it works.
 
-**From the validator/provider side:**
+**From the provider side:**
 The contract exposes two state altering functions i.e. *register* and *unregister*. 
 A call to the *register* function requires two parameters, namely 1) The name of the provider; 2) An http/https url pointer to information about the sender. The new record is given a status of 1, denoting that the record is active. 
 
@@ -15,27 +15,27 @@ A call to the *unregister* function takes no parameters and sets the status to 0
 
 In order to update the record, the sender is required to send another *register* transaction/call with the new information.
 
-The *register* and *unregister* functions MUST be signed by the participant.
+The *register* and *unregister* functions MUST be signed by the provider.
 
 **From the data consumer side:**	
-Once registered, other stakeholders such as dapp developers can use the information as a reference and a starting point in sourcing data about the deployed chain infrastructure. This can be done using the contract's two data acquisition functions, namely *getAllParticipants* and *getParticipant*.
+Once registered, other stakeholders such as dapp developers can use the information as a reference and a starting point in sourcing data about the deployed chain infrastructure. This can be done using the contract's two data acquisition functions, namely *getAllProviders* and *getProvider*.
 
-A call to *getAllParticipants* takes no parameters and returns a list of ALL registered addresses, irrespective of the status.
+A call to *getAllProviders* takes no parameters and returns a list of ALL registered addresses, irrespective of the status.
 
-A call to *getParticipant* requires a registered address as a parameter. The call returns a tuple data structure with the following data (address, name_of_participant, pointer_url, status ).
+A call to *getProvider* requires a registered address as a parameter. The call returns a tuple data structure with the following data (address, name_of_provider, pointer_url, status ).
 
 The contract has no admin facility.
 
 
-## Standardised Flare Participant File.
-**A Standardized JSON file for Flare Validators and Providers to publish as their info URL field when calling the register action on the Flare Participant Register Contract.**
+## Standardised Provider File.
+**A Standardized JSON file for Flare Validators and Providers to publish as their info URL field when calling the register action on the Flare Provider Register Contract.**
 
-### THE PARTICIPANT DECIDES WHAT THEY PUBLISH. NO AUTHORITY.
+### THE PROVIDER DECIDES WHAT THEY PUBLISH. NO AUTHORITY.
 
 - name: Name of validator or price provider
 - chains: [Array]
     - chain_id: Chain ID where this data is applicable,
-    - address: EVM address associated to the participant
+    - address: EVM address associated to the provider
 - organisation: {Object}
   - branding: {Object} - Logo images
       - logo_128: Entire url to image 128x128px
@@ -57,18 +57,22 @@ The contract has no admin facility.
     - git: Orgarnisation Github/Gitlab url
     - youtube: Organisation Channel address
     - wechat: Username
+- services: {Object}
+  - price: Yes or No
+  - attestations: Yes or No
+  - validator: Yes or No
 - infrastructure: [Array]
-    - chain: Flare or Songbird
+    - chain: Flare, Songbird etc
     - location: {Object} - Physical location of the infrastructure
         - name: Location in human readable format [City, State]
         - country: Country code [XX]
         - latitude: Latitude in decimal degrees
         - longitude: Longitude in decimal degrees
-    - rpc_endpoint: Chain RPC endpoint
-    - ws_endpoint: Chain WS endpoint
+    - rpc_endpoint: Chain RPC endpoint - Omit if private
+    - ws_endpoint: Chain WS endpoint - Omit if private
 
-## Validator and Price Provider Instructions 
-Copy the [template](https://gitlab.com/proofs.africa/flare-participant-register/assets/participant.template.json) provided on this repo. Name the file participant.json
+## Provider Instructions 
+Copy the [template](https://gitlab.com/proofs.africa/flare-provider-register/assets/provider.template.json) provided on this repo. Name the file provider.json
 
 Update the template with information specific to your organisation. Ensure that you provide as much and as accurate data as possible.
 
