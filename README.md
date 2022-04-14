@@ -28,12 +28,12 @@ The contract has no admin facility.
 
 
 ## Standardised Provider File.
-**A Standardized JSON file for Flare Validators and Providers to publish as their info URL field when calling the register action on the Flare Provider Register Contract.**
+**A Standardized JSON file for providers to publish as their info URL field when calling the register action on the ProviderRegister Contract.**
 
 ### THE PROVIDER DECIDES WHAT THEY PUBLISH. NO AUTHORITY.
 
 - name: Name of validator or price provider
-- chains: [Array]
+- chains: {Object}
     - chain_id: Chain ID where this data is applicable,
     - address: EVM address associated to the provider
 - organisation: {Object}
@@ -43,7 +43,7 @@ The contract has no admin facility.
       - logo_1024: Entire url to image 1024x1024px
       - logo_svg: Entire url to image svg
    - location: {Object} - Organization location
-      - name: Location in human readable format [City, State]
+      - name: Location in human-readable format [City, State]
       - country: Country code [XX] in accordance to [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
       - latitude: Latitude in decimal degrees
       - longitude: Longitude in decimal degrees
@@ -54,7 +54,7 @@ The contract has no admin facility.
     - discord: Full server
     - telegram: Username ONLY NOT URL
     - twitter: Username ONLY NOT URL
-    - git: Orgarnisation Github/Gitlab url
+    - git: Organisation Github/Gitlab url
     - youtube: Organisation Channel address
     - wechat: Username
 - services: {Object}
