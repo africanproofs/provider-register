@@ -1,24 +1,24 @@
-African Proofs proposes an on-chain mechanism to enable Flare and Songbird providers to self-manage data about their offerings. The mechanism involves a smart contract deployed on-chain, allowing providers to publish a pointer to a self hosted and standardised file containing information on the provider. This is intended for use by price providers, attestation providers etc.
+African Proofs proposes an on-chain mechanism to enable Flare and Songbird providers to self-manage data about their offerings. The mechanism involves a smart-contract deployed on-chain, allowing providers to publish a pointer to a self-hosted and standardized file containing information on the provider. 
 
-*For the purposes of this document, a provider is any entity that performs some sort of service for the Flare ecosystem. This typically includes price providers, attestation providers, validators ets.*
+*For this document, a provider is any entity that performs some service for the Flare ecosystem. Included under the 'provider' definition are price providers, attestation providers, validators, etc.*
 
 ## Provider Register Contract
-The contract is intended to facilitate a decentralised method to, in a permissionless manner; 1.) Notify the ecosystem participants of the existence of chain infrastructure offerings, 2.) Allow for an exchange of meta information amongst and about chain providers, developers, and validators etc.
+In a permissionless manner, the contract facilitates a decentralized method; 1.) Notify the ecosystem participants about chain infrastructure offerings, 2.) Allow for an exchange of meta-information amongst and about chain providers, developers, validators, etc.
 
 ### How it works.
 
 **From the provider side:**
-The contract exposes two state altering functions i.e. *register* and *unregister*. 
-A call to the *register* function requires two parameters, namely 1) The name of the provider; 2) An http/https url pointer to information about the sender. The new record is given a status of 1, denoting that the record is active. 
+The contract exposes two state-altering functions, i.e., *register* and *unregister*. 
+A call to the *register* function requires two parameters, namely 1) The name of the provider; 2) An HTTP/HTTPS URL pointer to information about the sender. The new record defaults to a status of 1, denoting that the provider is active. 
 
-A call to the *unregister* function takes no parameters and sets the status to 0. This indicates to the consumer that the record is inactive. The data is not removed. A subsequent call to *register*, will set the status to 1, once more.
+A call to the *unregister* function takes no parameters and sets the status to 0, which indicates to the consumer that the provider is inactive. No removal of data takes place. A subsequent call to *register* will set the status to 1.
 
-In order to update the record, the sender is required to send another *register* transaction/call with the new information.
+An update to the provider record is triggered when the sender submits another *register* transaction/call with the new information.
 
-The *register* and *unregister* functions MUST be signed by the provider.
+The provider must *register* and *unregister* functions.
 
-**From the data consumer side:**	
-Once registered, other stakeholders such as dapp developers can use the information as a reference and a starting point in sourcing data about the deployed chain infrastructure. This can be done using the contract's two data acquisition functions, namely *getAllProviders* and *getProvider*.
+**From the data consumer side:**   
+Once registered, other stakeholders such as dapp developers can use the information as a reference and a starting point in sourcing data about the deployed chain infrastructure. Interaction with the contract happens through two data acquisition functions, namely *getAllProviders* and *getProvider*.
 
 A call to *getAllProviders* takes no parameters and returns a list of ALL registered addresses, irrespective of the status.
 
@@ -74,19 +74,19 @@ The contract has no admin facility.
 ## Provider Instructions 
 Copy the [template](https://gitlab.com/proofs.africa/flare-provider-register/assets/provider.template.json) provided on this repo. Name the file provider.json
 
-Update the template with information specific to your organisation. Ensure that you provide as much and as accurate data as possible.
+Update the template with information specific to your organization. Ensure that you provide as much and as accurate data as possible.
 
-Upload the file to a publicly accessable endpoint. Could be your website, online git service, dropbox etc.
+Upload the file to a publicly accessible endpoint. It could be your website, online git service, dropbox, etc.
 
-Ensure that the URL is downloadable by tools such as curl, wget etc.
+Ensure that the URL is downloadable by tools such as curl, wget, etc.
 
 ## Deployment
 
-A TEST contract is deployed on Coston at the following address {address}. There will be a feedback period until {date}.
+The Coston chain has a deployment of the contract at the following address {address}. There will be a feedback period until {date}.
 
 ## Meta Info and Links
-The current version number of the specification file is **v0.1.0** and it is compliant with the JSON schema [Draft 2019-09](https://json-schema.org/specification-links.html#2019-09-formerly-known-as-draft-8)
+The current version number of the specification file is **v0.1.0**, and it is compliant with the JSON schema [Draft 2019-09](https://json-schema.org/specification-links.html#2019-09-formerly-known-as-draft-8).
 
-One can check for data validity using: https://www.jsonschemavalidator.net/
+One can check for data validity using the following [schema validator](https://www.jsonschemavalidator.net/).
 
-Mechanism finds inspiration from work done by [EOSRIO](https://eosrio.io/)
+Mechanism finds inspiration from work done by [EOSRIO](https://eosrio.io/).
