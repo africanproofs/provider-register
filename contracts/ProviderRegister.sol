@@ -128,7 +128,6 @@ contract ProviderRegister {
         return providerIndex;
     }
 
-    // See https://github.com/fravoll/solidity-patterns
     function _compareName(string memory _first, string memory _second) internal pure returns (bool _matches) {
         if(bytes(_first).length != bytes(_second).length) {
             return false;
