@@ -4,6 +4,8 @@ pragma solidity ^0.8.0;
 
 /**
  * @title An implementation of the Provider Register for the Flare Networks ecosystem.
+ *
+ * @author African Proofs
  */
 
 contract ProviderRegister {
@@ -106,7 +108,7 @@ contract ProviderRegister {
     /**
      * @notice Retrieves a single record based on submitted provider address.
      * @param _address          The address of the provider whose data is requested.
-     * @notice Returns a Tuple in format (address, name, url, status)
+     * @return Returns a Tuple in format (address, name, url, status)
      */
     function getProvider(address _address) public view returns(address, string memory, string memory, PROVIDER_STATUS status){
         require(providerIndex.length > 0, ERR_NO_PROVIDERS);
@@ -119,7 +121,8 @@ contract ProviderRegister {
     }
 
     /**
-     * @notice Returns a list containing all provider irrespective of status.
+     * @notice Retrieves a list of all registered addresses.
+     * @return Returns a list containing all provider irrespective of status.
      */
     function getAllProviders() public view returns(address[] memory) {
         return providerIndex;
