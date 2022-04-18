@@ -30,14 +30,17 @@
         "wechat":""
       }
     },
-    "services":{
-      "price_provider": "Yes",
-      "attestations_provider": "No",
-      "validator": "No"
-    },
+    "services":[
+      {
+        "chain": 0,
+        "price_provider": "Yes",
+        "attestations_provider": "No",
+        "validator": "No"
+      }
+    ],
     "infrastructure": [
       {
-        "chain": "",
+        "chain": 0,
         "location": {
           "name": "",
           "country": "",

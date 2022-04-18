@@ -33,9 +33,9 @@ The contract has no admin facility.
 ### THE PROVIDER DECIDES WHAT THEY PUBLISH. NO AUTHORITY.
 
 - name: Name of validator or price provider
-- chains: {Object}
-    - chain_id: Chain ID where this data is applicable,
-    - address: EVM address associated to the provider
+- chains: [Array]
+    - chain_id: Chain ID where this data is applicable. Must match chain where contract is deployed.
+    - address: EVM address associated to the provider. Must match signature used to register.
 - organisation: {Object}
   - branding: {Object} - Logo images
       - logo_128: Entire url to image 128x128px
@@ -57,22 +57,23 @@ The contract has no admin facility.
     - git: Organisation Github/Gitlab url
     - youtube: Organisation Channel address
     - wechat: Username
-- services: {Object}
+- services: [Array]
+  - chain: Chain ID
   - price: Yes or No
   - attestations: Yes or No
   - validator: Yes or No
 - infrastructure: [Array]
-    - chain: Flare, Songbird etc
+    - chain: Chain ID
     - location: {Object} - Physical location of the infrastructure
         - name: Location in human readable format [City, State]
         - country: Country code [XX]
         - latitude: Latitude in decimal degrees
         - longitude: Longitude in decimal degrees
-    - rpc_endpoint: Chain RPC endpoint - Omit if private
-    - ws_endpoint: Chain WS endpoint - Omit if private
+    - rpc_endpoint: Chain RPC endpoint - Omit if public point available
+    - ws_endpoint: Chain WS endpoint - Omit if public point available
 
 ## Provider Instructions 
-Copy the [template](https://github.com/africanproofs/provider-register/blob/main/assets/participant.template.json) provided on this repo. Name the file provider.json
+Copy the [template](https://github.com/africanproofs/provider-register/blob/main/assets/provider.template.json) provided on this repo. Name the file provider.json
 
 Update the template with information specific to your organization. Ensure that you provide as much and as accurate data as possible.
 
