@@ -83,7 +83,8 @@ Ensure that the URL is downloadable by tools such as curl, wget, etc.
 
 ## Deployment
 
-The Coston chain has a deployment of the contract at the following address {address}. There will be a feedback period until {date}.
+The Coston chain has a deployment of the contract at the following address **0xd5aae37eD04835cB5c7d9f8d41D0F872D5DC6802**. There will be a feedback period until 30 April 2022, should anyone be interested to provide any feedback.
+After the feedback period the final contract will be deployed on the Songbird chain. This single deployment will be used for all targeted chains.
 
 ## Meta Info and Links
 The current version number of the specification file is **v0.1.0**, and it is compliant with the JSON schema [Draft 2019-09](https://json-schema.org/specification-links.html#2019-09-formerly-known-as-draft-8).
