@@ -69,8 +69,8 @@ The contract has no admin facility.
         - country: Country code [XX]
         - latitude: Latitude in decimal degrees
         - longitude: Longitude in decimal degrees
-    - rpc_endpoint: Chain RPC endpoint - Omit if public point available
-    - ws_endpoint: Chain WS endpoint - Omit if public point available
+    - rpc_endpoint: Chain RPC endpoint - Omit if public point is not provided.
+    - ws_endpoint: Chain WS endpoint - Omit if public point is not provided.
 
 ## Provider Instructions 
 Copy the [template](https://github.com/africanproofs/provider-register/blob/main/assets/provider.template.json) provided on this repo. Name the file provider.json
