@@ -15,7 +15,7 @@ A call to the *unregister* function takes no parameters and sets the status to 0
 
 An update to the provider record is triggered when the sender submits another *register* transaction/call with the new information.
 
-The provider must sign *register* and *unregister* functions. Its is the signers address that is used as the index key for the record.
+The provider must sign the *register* and *unregister* functions. Its is the signers address that is used as the index key for the record.
 
 **From the data consumer side:**   
 Once registered, other stakeholders such as dapp developers can use the information as a reference and a starting point in sourcing data about the deployed chain infrastructure. Interaction with the contract happens through two data acquisition functions, namely *getAllProviders* and *getProvider*.
