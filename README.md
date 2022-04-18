@@ -45,8 +45,8 @@ The contract has no admin facility.
    - location: {Object} - Organization location
       - name: Location in human-readable format [City, State]
       - country: Country code [XX] in accordance to [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-      - latitude: Latitude in decimal degrees
-      - longitude: Longitude in decimal degrees
+      - latitude: Latitude in decimal
+      - longitude: Longitude in decimal
     },
   - contact: {Object} 
     - website: Valid website URL
@@ -67,8 +67,8 @@ The contract has no admin facility.
     - location: {Object} - Physical location of the infrastructure
         - name: Location in human readable format [City, State]
         - country: Country code [XX] in accordance to [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-        - latitude: Latitude in decimal degrees
-        - longitude: Longitude in decimal degrees
+        - latitude: Latitude in decimal
+        - longitude: Longitude in decimal
     - rpc_endpoint: Chain RPC endpoint - Omit if public point is not provided.
     - ws_endpoint: Chain WS endpoint - Omit if public point is not provided.
 
