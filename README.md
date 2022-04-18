@@ -72,7 +72,7 @@ The contract has no admin facility.
     - ws_endpoint: Chain WS endpoint - Omit if private
 
 ## Provider Instructions 
-Copy the [template](https://gitlab.com/proofs.africa/flare-provider-register/assets/provider.template.json) provided on this repo. Name the file provider.json
+Copy the [template](https://github.com/africanproofs/provider-register/assets/provider.template.json) provided on this repo. Name the file provider.json
 
 Update the template with information specific to your organization. Ensure that you provide as much and as accurate data as possible.
 

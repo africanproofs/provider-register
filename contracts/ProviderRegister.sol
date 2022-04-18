@@ -30,7 +30,7 @@ contract ProviderRegister {
         uint index;
     }
 
-    mapping(address => Provider) public providers;
+    mapping(address => Provider) private providers;
     address[] private providerIndex;
 
     event ProviderRegisteredEvent(address indexed owner, uint index, string name, string url, PROVIDER_STATUS status);

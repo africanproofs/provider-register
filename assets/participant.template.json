@@ -1,0 +1,51 @@
+{
+    "name": "",
+    "chains": [
+        {
+            "chain_id": 0,
+            "address": ""
+        }
+    ],
+    "organisation": {
+      "branding":{
+        "logo_128":"",
+        "logo_256":"",
+        "logo_1024":"",
+        "logo_svg":""
+      },
+      "location": {
+        "name": "",
+        "country": "",
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contact": {
+        "website": "",
+        "email":"",
+        "git":"",
+        "discord": "",
+        "telegram": "",
+        "twitter": "",
+        "youtube": "",
+        "wechat":""
+      }
+    },
+    "services":{
+      "price_provider": "Yes",
+      "attestations_provider": "No",
+      "validator": "No"
+    },
+    "infrastructure": [
+      {
+        "chain": "",
+        "location": {
+          "name": "",
+          "country": "",
+          "latitude": 0,
+          "longitude": 0
+        },
+        "rpc_endpoint": "",
+        "ws_endpoint": ""
+      }
+    ]
+  }
