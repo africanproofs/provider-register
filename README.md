@@ -59,8 +59,8 @@ The contract has no admin facility.
     - wechat: Username
 - services: [Array]
   - chain: Chain ID
-  - price: Yes or No
-  - attestations: Yes or No
+  - price_provider: Yes or No
+  - attestations_provider: Yes or No
   - validator: Yes or No
 - infrastructure: [Array]
     - chain: Chain ID
