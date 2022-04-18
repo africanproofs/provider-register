@@ -92,6 +92,6 @@ After the feedback period the final contract will be deployed on the Songbird ch
 ## Meta Info and Links
 The current version number of the specification file is **v0.1.0**, and it is compliant with the JSON schema [Draft 2019-09](https://json-schema.org/specification-links.html#2019-09-formerly-known-as-draft-8).
 
-One can check for data validity using the following [schema validator](https://www.jsonschemavalidator.net/).
+One can check for provider file schema validity using the following [schema validator](https://www.jsonschemavalidator.net/).
 
 Mechanism finds inspiration from work done by [EOSRIO](https://eosrio.io/).
