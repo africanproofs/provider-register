@@ -36,13 +36,13 @@ contract ProviderRegister {
     event ProviderRegisteredEvent(address indexed owner, uint index, string name, string url, PROVIDER_STATUS status);
     event ProviderUnregisteredEvent(address indexed owner, uint index, PROVIDER_STATUS status);
 
-    // A helper function that check if sender or submitted address is in one of providers
+    // A helper function that checks if sender or submitted address is in one of providers
     function _isProvider(address _address) internal view returns (bool _isCorrect) {
         if(providerIndex.length == 0) return false;
         return (providerIndex[providers[_address].index] == _address);
     }
 
-    // A helper function that check if the provider name is unique
+    // A helper function that checks if the provider name is not unique and has a status of ACTIVE
     function _verifyProviderName(string memory _name) internal view returns (bool _exists) {
         if(providerIndex.length == 0) return false;
         uint providerLength = providerIndex.length;
