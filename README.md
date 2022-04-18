@@ -85,6 +85,10 @@ Ensure that the URL is downloadable by tools such as curl, wget, etc.
 
 The Coston chain has a deployment of the contract at the following address **0xd5aae37eD04835cB5c7d9f8d41D0F872D5DC6802**. 
 The easiest way to interact with the contract currently is to use the [Coston Explorer](https://coston-explorer.flare.network/address/0xd5aae37eD04835cB5c7d9f8d41D0F872D5DC6802/transactions). 
+For those who prefer other means of interaction, the following Coston rpc endpoints exist:-
+- https://coston.proofs.africa/rpc
+- https://coston-api.flare.network/ext/bc/C/rpc
+
 
 There will be a feedback period until 30 April 2022, should anyone be interested to provide any feedback.
 After the feedback period the final contract will be deployed on the Songbird chain. The contract deployment on Songbird will be used for all targeted chains.
